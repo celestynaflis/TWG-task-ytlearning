@@ -1,5 +1,8 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import {
+    DarkTheme,
+    DefaultTheme,
+    ThemeProvider,
+} from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -9,53 +12,53 @@ import 'react-native-reanimated';
 import { useColorScheme } from '@/components/useColorScheme';
 
 export {
-  // Catch any errors thrown by the Layout component.
-  ErrorBoundary,
+    // Catch any errors thrown by the Layout component.
+    ErrorBoundary,
 } from 'expo-router';
 
 export const unstable_settings = {
-  // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: 'login',
+    // Ensure that reloading on `/modal` keeps a back button present.
+    initialRouteName: 'login',
 };
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [fontLoaded, fontError] = useFonts({
-    // SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-    PoppinsRegular: require('../assets/fonts/Poppins-Regular.ttf'),
-    ...FontAwesome.font,
-  });
+    const [fontLoaded, fontError] = useFonts({
+        PoppinsRegular: require('../assets/fonts/Poppins-Regular.ttf'),
+        PoppinsBold: require('../assets/fonts/Poppins-Bold.ttf'),
+    });
 
-  // Expo Router uses Error Boundaries to catch errors in the navigation tree.
-  useEffect(() => {
-    if (fontError) throw fontError;
-  }, [fontError]);
+    // Expo Router uses Error Boundaries to catch errors in the navigation tree.
+    useEffect(() => {
+        if (fontError) throw fontError;
+    }, [fontError]);
 
-  useEffect(() => {
-    if (fontLoaded) {
-      SplashScreen.hideAsync();
+    useEffect(() => {
+        if (fontLoaded) {
+            SplashScreen.hideAsync();
+        }
+    }, [fontLoaded]);
+
+    if (!fontLoaded) {
+        return null;
     }
-  }, [fontLoaded]);
 
-  if (!fontLoaded) {
-    return null;
-  }
-
-  return <RootLayoutNav />;
+    return <RootLayoutNav />;
 }
 
 function RootLayoutNav() {
-  const colorScheme = useColorScheme();
+    const colorScheme = useColorScheme();
 
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="index" options={{headerShown: false}}/>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        {/*<Stack.Screen name="modal" options={{ presentation: 'modal' }} />*/}
-      </Stack>
-    </ThemeProvider>
-  );
+    return (
+        <ThemeProvider
+            value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
+        >
+            <Stack>
+                <Stack.Screen name="index" options={{ headerShown: false }} />
+                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            </Stack>
+        </ThemeProvider>
+    );
 }
