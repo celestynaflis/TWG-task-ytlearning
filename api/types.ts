@@ -4,12 +4,11 @@ export interface Video {
         kind: string;
     };
     snippet: {
-        publishedAt: Date;
+        publishedAt: string;
         title: string;
         description: string;
+        channelTitle: string;
     };
-    channelTitle: string;
-    channelDescription: string;
     statistics: {
         viewCount: string;
         likeCount: string;

@@ -1,8 +1,8 @@
 import React, { createContext, useState, useContext } from 'react';
 
 interface SearchQueryContextProps {
-    query: string;
-    setQuery: (query: string) => void;
+    searchQuery: string;
+    setSearchQuery: (query: string) => void;
 }
 
 const SearchQueryContext = createContext<SearchQueryContextProps | undefined>(
@@ -12,10 +12,10 @@ const SearchQueryContext = createContext<SearchQueryContextProps | undefined>(
 export const SearchQueryProvider: React.FC<{ children: React.ReactNode }> = ({
     children,
 }) => {
-    const [query, setQuery] = useState('');
+    const [searchQuery, setSearchQuery] = useState('');
 
     return (
-        <SearchQueryContext.Provider value={{ query, setQuery }}>
+        <SearchQueryContext.Provider value={{ searchQuery, setSearchQuery }}>
             {children}
         </SearchQueryContext.Provider>
     );

@@ -1,15 +1,27 @@
 import { SettingsButton } from '@/components/HomeScreen/SettingsButton';
 import { homeScreenStyles } from './HomeScreenStyles';
 import { SearchInput } from '@/components/SearchInput/SearchInput';
-import { View } from 'react-native';
+import { SafeAreaView, ScrollView, View } from 'react-native';
+
+import {
+    Category,
+    VideoCategory,
+} from '@/components/VideoCategory/VideoCategory';
 
 export const HomeScreen = () => {
     return (
-        <View style={homeScreenStyles.container}>
+        <SafeAreaView style={homeScreenStyles.container}>
             <View style={homeScreenStyles.searchContainer}>
-                <SearchInput />
-                <SettingsButton />
+                <View style={homeScreenStyles.rowContainer}>
+                    <SearchInput />
+                    <SettingsButton />
+                </View>
             </View>
-        </View>
+            <ScrollView>
+                <VideoCategory category={Category.reactNative} />
+                <VideoCategory category={Category.react} />
+                <VideoCategory category={Category.typescript} />
+            </ScrollView>
+        </SafeAreaView>
     );
 };

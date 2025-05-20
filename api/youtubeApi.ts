@@ -17,7 +17,7 @@ export const searchVideos = async (query: string) => {
                 part: 'snippet',
                 q: query,
                 type: 'video',
-                maxResults: 20,
+                maxResults: 3,
             },
         });
         return response.data.items;

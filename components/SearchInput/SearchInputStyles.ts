@@ -4,17 +4,17 @@ import colors from '@/constants/Colors';
 export const searchInputStyles = StyleSheet.create({
     inputContainer: {
         paddingHorizontal: 20,
-        height: 40,
+        height: 44,
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'flex-start',
+        justifyContent: 'center',
         alignItems: 'center',
         gap: 10,
         borderRadius: 16,
         borderWidth: 2,
         borderStyle: 'solid',
         borderColor: colors.navyBlue,
-        width: '100%',
+        flex: 1,
     },
     searchInput: {
         fontFamily: 'PoppinsRegular',

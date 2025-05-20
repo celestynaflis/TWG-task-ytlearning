@@ -8,19 +8,21 @@ import { useSearchQuery } from '@/context/SearchQueryContext';
 export const SearchInput = () => {
     const { push } = useRouter();
 
-    const { query, setQuery } = useSearchQuery();
+    const { searchQuery, setSearchQuery } = useSearchQuery();
 
     return (
         <View style={searchInputStyles.inputContainer}>
             <SearchIcon stroke={colors.navyBlue} width={24} height={24} />
             <TextInput
-                value={query}
+                value={searchQuery}
                 onChange={(event) => {
-                    setQuery(event.nativeEvent.text);
+                    setSearchQuery(event.nativeEvent.text);
                 }}
                 style={searchInputStyles.searchInput}
                 placeholder="Search videos"
-                onEndEditing={() => push('/(tabs)/search')}
+                onSubmitEditing={() => {
+                    push('/(tabs)/search');
+                }}
             />
         </View>
     );

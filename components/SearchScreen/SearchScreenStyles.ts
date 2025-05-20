@@ -6,12 +6,14 @@ export const searchScreenStyles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'flex-start',
-        paddingVertical: 100,
         backgroundColor: colors.white,
     },
     searchContainer: {
+        paddingHorizontal: 20,
         display: 'flex',
         alignItems: 'center',
-        width: '90%',
+        width: '100%',
+        marginBottom: 10,
+        height: 44,
     },
 });
