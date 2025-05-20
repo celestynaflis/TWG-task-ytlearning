@@ -8,6 +8,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
+import { SearchQueryProvider } from '@/context/SearchQueryContext';
 
 import { useColorScheme } from '@/components/useColorScheme';
 
@@ -52,13 +53,21 @@ function RootLayoutNav() {
     const colorScheme = useColorScheme();
 
     return (
-        <ThemeProvider
-            value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
-        >
-            <Stack>
-                <Stack.Screen name="index" options={{ headerShown: false }} />
-                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-            </Stack>
-        </ThemeProvider>
+        <SearchQueryProvider>
+            <ThemeProvider
+                value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
+            >
+                <Stack>
+                    <Stack.Screen
+                        name="index"
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                        name="(tabs)"
+                        options={{ headerShown: false }}
+                    />
+                </Stack>
+            </ThemeProvider>
+        </SearchQueryProvider>
     );
 }

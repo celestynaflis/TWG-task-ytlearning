@@ -1,4 +1,4 @@
-import { WelcomePage } from '@/components/WelcomePage/WelcomePage';
+import { WelcomePage } from '@/components/WelcomeScreen/WelcomePage';
 
 export default function WelcomeScreen() {
     return <WelcomePage />;
