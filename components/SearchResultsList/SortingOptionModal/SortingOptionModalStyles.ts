@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import colors from '@/constants/Colors';
 
-export const styles = StyleSheet.create({
+export const modalStyles = StyleSheet.create({
     backdrop: {
         flex: 1,
         backgroundColor: 'rgba(0,0,0,0.8)',
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
         paddingVertical: 30,
         paddingHorizontal: 25,
     },
-    title: {
+    titleText: {
         fontSize: 18,
         fontFamily: 'Poppins-SemiBold',
         color: colors.white,
@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
         height: 20,
         borderRadius: 10,
         borderWidth: 2,
-        borderColor: '#fff',
+        borderColor: colors.white,
         justifyContent: 'center',
         alignItems: 'center',
         marginRight: 10,

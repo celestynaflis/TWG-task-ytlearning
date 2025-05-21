@@ -11,16 +11,12 @@ import 'react-native-reanimated';
 import { SearchQueryProvider } from '@/context/SearchQueryContext';
 
 import { useColorScheme } from '@/components/useColorScheme';
+import { SelectedVideoProvider } from '@/context/SelectedVideoContext';
 
 export {
     // Catch any errors thrown by the Layout component.
     ErrorBoundary,
 } from 'expo-router';
-
-export const unstable_settings = {
-    // Ensure that reloading on `/modal` keeps a back button present.
-    initialRouteName: 'login',
-};
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -56,25 +52,27 @@ function RootLayoutNav() {
 
     return (
         <SearchQueryProvider>
-            <ThemeProvider
-                value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
-            >
-                <Stack>
-                    <Stack.Screen
-                        name="index"
-                        options={{ headerShown: false }}
-                    />
-                    <Stack.Screen
-                        name="(tabs)"
-                        options={{ headerShown: false }}
-                    />
-                    <Stack.Screen
-                        name="video-details"
-                        options={{ headerShown: false }}
-                    />
-                    <Stack.Screen name="settings" />
-                </Stack>
-            </ThemeProvider>
+            <SelectedVideoProvider>
+                <ThemeProvider
+                    value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
+                >
+                    <Stack>
+                        <Stack.Screen
+                            name="index"
+                            options={{ headerShown: false }}
+                        />
+                        <Stack.Screen
+                            name="(tabs)"
+                            options={{ headerShown: false }}
+                        />
+                        <Stack.Screen
+                            name="video-details"
+                            options={{ headerShown: false }}
+                        />
+                        <Stack.Screen name="settings" />
+                    </Stack>
+                </ThemeProvider>
+            </SelectedVideoProvider>
         </SearchQueryProvider>
     );
 }

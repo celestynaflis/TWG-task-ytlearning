@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import colors from '@/constants/Colors';
 
-export const styles = StyleSheet.create({
+export const badgeStyles = StyleSheet.create({
     badge: {
         display: 'flex',
         flexDirection: 'row',

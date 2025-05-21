@@ -4,6 +4,7 @@ import React from 'react';
 import { Video } from '@/api/types';
 import { displayDate } from '@/utils/displayDate';
 import { useRouter } from 'expo-router';
+import { useSelectedVideo } from '@/context/SelectedVideoContext';
 
 interface VideosListProps {
     data: Video[];
@@ -12,6 +13,7 @@ interface VideosListProps {
 
 export const VideosList: React.FC<VideosListProps> = ({ data, listHeader }) => {
     const { push } = useRouter();
+    const { setSelectedVideoId } = useSelectedVideo();
     return (
         <FlatList
             data={data}
@@ -20,6 +22,7 @@ export const VideosList: React.FC<VideosListProps> = ({ data, listHeader }) => {
             renderItem={({ item }) => (
                 <TouchableOpacity
                     onPress={() => {
+                        setSelectedVideoId(item.id.videoId);
                         push('/video-details');
                     }}
                     style={videosListStyles.container}

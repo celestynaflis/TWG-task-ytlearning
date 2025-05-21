@@ -4,7 +4,7 @@ import { TouchableOpacity } from 'react-native';
 import ArrowIcon from '@/assets/icons/leftarrow-icon.svg';
 import colors from '@/constants/Colors';
 import { useNavigation } from '@react-navigation/native';
-import styles from './VideoPlayerStyles';
+import { videoPlayerStyles } from './VideoPlayerStyles';
 
 export const VideoPlayer = () => {
     const videoRef = useRef<VideoRef>(null);
@@ -16,14 +16,14 @@ export const VideoPlayer = () => {
         <>
             <TouchableOpacity
                 onPress={() => navigation.goBack()}
-                style={styles.backButton}
+                style={videoPlayerStyles.backButton}
             >
                 <ArrowIcon width="20" height="20" stroke={colors.white} />
             </TouchableOpacity>
             <Video
                 source={background}
                 ref={videoRef}
-                style={styles.backgroundVideo}
+                style={videoPlayerStyles.backgroundVideo}
                 controls={true}
                 resizeMode="contain"
             />

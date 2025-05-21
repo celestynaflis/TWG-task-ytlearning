@@ -1,23 +1,10 @@
 import React from 'react';
 import { Tabs } from 'expo-router';
-
 import colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
-
 import HomeIcon from '@/assets/icons/home-icon.svg';
 import SearchIcon from '@/assets/icons/search-icon.svg';
 
-// You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
-// function TabBarIcon(props: {
-//   name: React.ComponentProps<typeof FontAwesome>['name'];
-//   color: string;
-// }) {
-//   return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
-// }
-
 export default function TabLayout() {
-    const colorScheme = useColorScheme();
-
     return (
         <Tabs
             screenOptions={{
@@ -28,7 +15,6 @@ export default function TabLayout() {
                     backgroundColor: colors.backgroundBlue,
                     borderTopWidth: 0,
                     height: 100,
-                    // paddingBottom: 10, // 👈 opcjonalnie, dla lepszego rozmieszczenia
                     paddingTop: 10,
                 },
                 tabBarLabelStyle: {

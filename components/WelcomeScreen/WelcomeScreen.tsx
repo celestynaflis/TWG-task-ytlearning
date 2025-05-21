@@ -1,17 +1,17 @@
 import { View, Text } from 'react-native';
 import { Link, useRouter } from 'expo-router';
-import { welcomePageStyles } from '@/components/WelcomeScreen/WelcomePageStyles';
+import { welcomeScreenStyles } from '@/components/WelcomeScreen/WelcomeScreenStyles';
 import Logo from '@/assets/images/logo.svg';
 import AppIcon from '@/assets/icons/app-icon.svg';
 import { ActionButton } from '@/components/ActionButton/ActionButton';
 
-export const WelcomePage = () => {
+export const WelcomeScreen = () => {
     const { push } = useRouter();
     return (
-        <View style={welcomePageStyles.container}>
+        <View style={welcomeScreenStyles.container}>
             <Logo />
             <AppIcon />
-            <Text style={welcomePageStyles.slogan}>
+            <Text style={welcomeScreenStyles.slogan}>
                 Welcome to the best YouTube-based learning application.
             </Text>
             <ActionButton
@@ -20,13 +20,13 @@ export const WelcomePage = () => {
                     push('/(tabs)/home');
                 }}
             />
-            <Text style={welcomePageStyles.text}>
+            <Text style={welcomeScreenStyles.text}>
                 By continuing you agree with{' '}
-                <Link style={welcomePageStyles.link} href="/">
+                <Link style={welcomeScreenStyles.link} href="/">
                     Terms and Conditions
                 </Link>{' '}
                 and{' '}
-                <Link style={welcomePageStyles.link} href="/">
+                <Link style={welcomeScreenStyles.link} href="/">
                     Privacy Policy
                 </Link>
             </Text>

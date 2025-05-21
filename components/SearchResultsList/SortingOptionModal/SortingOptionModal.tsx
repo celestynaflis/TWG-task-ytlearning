@@ -1,7 +1,7 @@
 import { Modal, Pressable, TouchableOpacity, View, Text } from 'react-native';
 import React, { SetStateAction, useState } from 'react';
 import { SortingOption } from '@/components/SearchResultsList/SearchResultsList';
-import { styles } from './SortingOptionModalStyles';
+import { modalStyles } from './SortingOptionModalStyles';
 
 interface Props {
     isOpen: boolean;
@@ -32,29 +32,31 @@ export const SortingOptionModal: React.FC<Props> = ({
 
     return (
         <Modal visible={isOpen} transparent animationType="fade">
-            <View style={styles.backdrop}>
-                <View style={styles.modalContainer}>
-                    <Text style={styles.title}>Sort records by:</Text>
+            <View style={modalStyles.backdrop}>
+                <View style={modalStyles.modalContainer}>
+                    <Text style={modalStyles.titleText}>Sort records by:</Text>
                     {sortOptions.map((option) => (
                         <Pressable
                             key={option}
-                            style={styles.optionRow}
+                            style={modalStyles.optionRow}
                             onPress={() => setSelectedRadioButton(option)}
                         >
-                            <View style={styles.radioOuter}>
+                            <View style={modalStyles.radioOuter}>
                                 {selectedRadioButton === option && (
-                                    <View style={styles.radioInner} />
+                                    <View style={modalStyles.radioInner} />
                                 )}
                             </View>
-                            <Text style={styles.optionLabel}>{option}</Text>
+                            <Text style={modalStyles.optionLabel}>
+                                {option}
+                            </Text>
                         </Pressable>
                     ))}
 
                     <TouchableOpacity
-                        style={styles.confirmButton}
+                        style={modalStyles.confirmButton}
                         onPress={handleConfirm}
                     >
-                        <Text style={styles.confirmText}>Confirm</Text>
+                        <Text style={modalStyles.confirmText}>Confirm</Text>
                     </TouchableOpacity>
                 </View>
             </View>

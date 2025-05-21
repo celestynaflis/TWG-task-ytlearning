@@ -5,6 +5,7 @@ import React from 'react';
 import { displayDate } from '@/utils/displayDate';
 import { Category } from '@/components/VideoCategory/VideoCategory';
 import { useRouter } from 'expo-router';
+import { useSelectedVideo } from '@/context/SelectedVideoContext';
 
 interface HorizontalVideoListProps {
     data: Video[];
@@ -16,6 +17,7 @@ export const HorizontalVideoList: React.FC<HorizontalVideoListProps> = ({
     category,
 }) => {
     const { push } = useRouter();
+    const { setSelectedVideoId } = useSelectedVideo();
 
     const displayImage = (category: Category) => {
         switch (category) {
@@ -38,7 +40,10 @@ export const HorizontalVideoList: React.FC<HorizontalVideoListProps> = ({
                 keyExtractor={(item) => item.id.videoId}
                 renderItem={({ item }) => (
                     <TouchableOpacity
-                        onPress={() => push('/video-details')}
+                        onPress={() => {
+                            setSelectedVideoId(item.id.videoId);
+                            push('/video-details');
+                        }}
                         style={horizontalVideoListStyles.card}
                     >
                         <Image

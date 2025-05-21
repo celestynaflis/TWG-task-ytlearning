@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({
+export const videoPlayerStyles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'black',
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         bottom: 0,
         right: 0,
         borderRadius: 100,
-        backgroundColor: '#00000040',
+        backgroundColor: 'rgba(0,0,0,0.25)',
         width: 32,
         height: 32,
         zIndex: 2,
@@ -26,5 +26,3 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 });
-
-export default styles;

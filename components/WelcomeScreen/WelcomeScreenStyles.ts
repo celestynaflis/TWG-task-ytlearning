@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import colors from '@/constants/Colors';
 
-export const welcomePageStyles = StyleSheet.create({
+export const welcomeScreenStyles = StyleSheet.create({
     container: {
         paddingHorizontal: 20,
         backgroundColor: colors.backgroundBlue,

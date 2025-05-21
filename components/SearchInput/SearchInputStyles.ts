@@ -21,5 +21,8 @@ export const searchInputStyles = StyleSheet.create({
         backgroundColor: colors.white,
         color: colors.navyBlue,
         flex: 1,
+        textAlignVertical: 'center',
+        padding: 0,
+        includeFontPadding: false,
     },
 });

@@ -2,7 +2,6 @@ import { SettingsButton } from '@/components/HomeScreen/SettingsButton';
 import { homeScreenStyles } from './HomeScreenStyles';
 import { SearchInput } from '@/components/SearchInput/SearchInput';
 import { SafeAreaView, ScrollView, View } from 'react-native';
-
 import {
     Category,
     VideoCategory,

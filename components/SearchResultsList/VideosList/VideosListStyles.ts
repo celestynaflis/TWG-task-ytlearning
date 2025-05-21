@@ -5,6 +5,7 @@ export const videosListStyles = StyleSheet.create({
     container: {
         paddingTop: 10,
         paddingBottom: 20,
+        paddingHorizontal: 20,
     },
     image: {
         width: '100%',

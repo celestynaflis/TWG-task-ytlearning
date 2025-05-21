@@ -19,6 +19,5 @@ export const actionButtonStyles = StyleSheet.create({
         fontSize: 16,
         lineHeight: 24,
         fontFamily: 'Poppins-SemiBold',
-        // fontFamily: 'Poppins-SemiBold',,
     },
 });

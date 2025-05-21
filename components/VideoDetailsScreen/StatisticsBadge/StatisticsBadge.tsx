@@ -1,5 +1,5 @@
 import { View, Text } from 'react-native';
-import { styles } from './StatisticsBadgeStyles';
+import { badgeStyles } from './StatisticsBadgeStyles';
 import React from 'react';
 
 interface Props {
@@ -9,9 +9,9 @@ interface Props {
 
 export const StatisticsBadge: React.FC<Props> = ({ text, icon }) => {
     return (
-        <View style={styles.badge}>
+        <View style={badgeStyles.badge}>
             <View>{icon}</View>
-            <Text style={styles.text}>{text}</Text>
+            <Text style={badgeStyles.text}>{text}</Text>
         </View>
     );
 };

@@ -1,5 +1,5 @@
 import { Video } from '@/api/types';
-import { VideosList } from './VideosList';
+import { VideosList } from './VideosList/VideosList';
 import { useSearchQuery } from '@/context/SearchQueryContext';
 import { View, Text } from 'react-native';
 import { searchResultsListStyles } from './SearchResultsListStyles';
@@ -41,7 +41,7 @@ export const SearchResultsList: React.FC<SearchResultsProps> = ({ data }) => {
 
     const ListHeader = () => {
         return (
-            <>
+            <View style={searchResultsListStyles.container}>
                 <Text style={searchResultsListStyles.resultsCounterText}>
                     {data.length} results found for "
                     <Text style={searchResultsListStyles.queryText}>
@@ -60,7 +60,7 @@ export const SearchResultsList: React.FC<SearchResultsProps> = ({ data }) => {
                         {selectedSortingOption}
                     </Text>
                 </Text>
-            </>
+            </View>
         );
     };
 
@@ -74,12 +74,7 @@ export const SearchResultsList: React.FC<SearchResultsProps> = ({ data }) => {
                 setSelectedSortingOption={setSelectedSortingOption}
                 selectedSortingOption={selectedSortingOption}
             />
-            <View style={searchResultsListStyles.container}>
-                <VideosList
-                    data={displayData(data)}
-                    listHeader={ListHeader()}
-                />
-            </View>
+            <VideosList data={displayData(data)} listHeader={ListHeader()} />
         </>
     );
 };

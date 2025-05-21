@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 import colors from '@/constants/Colors';
 
 export const styles = StyleSheet.create({
+    container: {
+        paddingBottom: 60,
+    },
     text: {
         color: colors.navyBlue,
         fontFamily: 'Poppins-SemiBold',
