@@ -49,3 +49,5 @@ This is a React Native app built with Expo, allowing users to search for YouTube
 
 7. **Enjoy :)**
 
+PS: You can also test the app using ```npx expo start``` with Expo Go, but the Video Detail Screen won’t work correctly, as Expo Go doesn’t support native modules like the ```react-native-video``` player.
+
