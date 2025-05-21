@@ -1,36 +1,38 @@
-import { VideoPlayer } from '@/components/VideoDetailsScreen/VideoPlayer';
-import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
-import { Text } from '@/components/Themed';
+import { VideoPlayer } from '@/components/VideoDetailsScreen/VideoPlayer/VideoPlayer';
+import { SafeAreaView, ScrollView, StyleSheet, View, Text } from 'react-native';
 import colors from '@/constants/Colors';
 import UserIcon from '@/assets/icons/person-icon.svg';
+import { Details } from '@/components/VideoDetailsScreen/Details/Details';
 
 export const VideoDetailsScreen = () => {
     return (
-        <SafeAreaView style={styles.container}>
-            <ScrollView>
-                <Text style={styles.videoTitle}>Video title</Text>
-                <View style={styles.rowContainer}>
-                    <View style={styles.icon}>
-                        <UserIcon
-                            width="20px"
-                            height="20px"
-                            fill={colors.white}
-                        />
+        <>
+            <VideoPlayer />
+            <SafeAreaView style={styles.container}>
+                <ScrollView>
+                    <Text style={styles.videoTitle}>Video title</Text>
+                    <View style={styles.rowContainer}>
+                        <View style={styles.icon}>
+                            <UserIcon
+                                width="20px"
+                                height="20px"
+                                fill={colors.white}
+                            />
+                        </View>
+                        <Text style={styles.channelName}>Channel name</Text>
                     </View>
-                    <Text style={styles.channelName}>Channel name</Text>
-                </View>
-            </ScrollView>
-            {/*<VideoPlayer />*/}
-        </SafeAreaView>
+                    <Details />
+                </ScrollView>
+            </SafeAreaView>
+        </>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // alignItems: 'center',
         justifyContent: 'flex-start',
-        paddingTop: 60,
+        paddingTop: 70,
         paddingHorizontal: 20,
     },
     videoTitle: {
@@ -61,5 +63,14 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: colors.navyBlue,
         fontFamily: 'Poppins-Bold',
+    },
+    detailsText: {
+        fontSize: 12,
+        color: colors.navyBlue,
+        fontFamily: 'Poppins-SemiBold',
+        textAlign: 'center',
+        paddingTop: 10,
+        borderBottomWidth: 2,
+        borderBottomColor: colors.navyBlue,
     },
 });
