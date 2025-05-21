@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     },
     title: {
         fontSize: 18,
-        fontWeight: 600,
+        fontFamily: 'Poppins-SemiBold',
         color: colors.white,
         marginBottom: 20,
     },
@@ -56,7 +56,7 @@ export const styles = StyleSheet.create({
     },
     confirmText: {
         color: colors.white,
-        fontWeight: 600,
+        fontFamily: 'Poppins-SemiBold',
         fontSize: 16,
     },
 });

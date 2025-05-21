@@ -1,7 +1,7 @@
 import { Video } from '@/api/types';
 import { VideosList } from './VideosList';
 import { useSearchQuery } from '@/context/SearchQueryContext';
-import { ScrollView, View } from 'react-native';
+import { View } from 'react-native';
 import { searchResultsListStyles } from './SearchResultsListStyles';
 import { Text } from '@/components/Themed';
 import React, { useState } from 'react';
@@ -40,6 +40,31 @@ export const SearchResultsList: React.FC<SearchResultsProps> = ({ data }) => {
         }
     };
 
+    const ListHeader = () => {
+        return (
+            <>
+                <Text style={searchResultsListStyles.resultsCounterText}>
+                    {data.length} results found for "
+                    <Text style={searchResultsListStyles.queryText}>
+                        {searchQuery}
+                    </Text>
+                    "
+                </Text>
+                <Text style={searchResultsListStyles.sortText}>
+                    Sort by:{' '}
+                    <Text
+                        onPress={() => {
+                            setIsSortingModalOpen(true);
+                        }}
+                        style={searchResultsListStyles.sortTextButton}
+                    >
+                        {selectedSortingOption}
+                    </Text>
+                </Text>
+            </>
+        );
+    };
+
     return (
         <>
             <SortingOptionModal
@@ -50,29 +75,12 @@ export const SearchResultsList: React.FC<SearchResultsProps> = ({ data }) => {
                 setSelectedSortingOption={setSelectedSortingOption}
                 selectedSortingOption={selectedSortingOption}
             />
-            <ScrollView>
-                <View style={searchResultsListStyles.container}>
-                    <Text style={searchResultsListStyles.resultsCounterText}>
-                        {data.length} results found for "
-                        <Text style={searchResultsListStyles.queryText}>
-                            {searchQuery}
-                        </Text>
-                        "
-                    </Text>
-                    <Text style={searchResultsListStyles.sortText}>
-                        Sort by:{' '}
-                        <Text
-                            onPress={() => {
-                                setIsSortingModalOpen(true);
-                            }}
-                            style={searchResultsListStyles.sortTextButton}
-                        >
-                            {selectedSortingOption}
-                        </Text>
-                    </Text>
-                    <VideosList data={displayData(data)} />
-                </View>
-            </ScrollView>
+            <View style={searchResultsListStyles.container}>
+                <VideosList
+                    data={displayData(data)}
+                    listHeader={ListHeader()}
+                />
+            </View>
         </>
     );
 };

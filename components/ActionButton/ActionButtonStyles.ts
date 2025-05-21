@@ -18,6 +18,7 @@ export const actionButtonStyles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 16,
         lineHeight: 24,
-        fontWeight: 600,
+        fontFamily: 'Poppins-SemiBold',
+        // fontFamily: 'Poppins-SemiBold',,
     },
 });

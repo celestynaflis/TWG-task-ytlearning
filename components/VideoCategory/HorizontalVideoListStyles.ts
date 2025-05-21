@@ -16,7 +16,7 @@ export const horizontalVideoListStyles = StyleSheet.create({
     cardTitle: {
         marginTop: 6,
         fontSize: 12,
-        fontWeight: '500',
+        fontFamily: 'Poppins-Medium',
         color: '#2e2f3e',
     },
     cardDate: {

@@ -7,6 +7,7 @@ export const searchScreenStyles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start',
         backgroundColor: colors.white,
+        paddingTop: 60,
     },
     searchContainer: {
         paddingHorizontal: 20,

@@ -14,17 +14,17 @@ export const videosListStyles = StyleSheet.create({
     videoTitle: {
         marginTop: 10,
         fontSize: 12,
-        fontWeight: 700,
+        fontFamily: 'Poppins-Bold',
         color: colors.navyBlue,
     },
     videoDescription: {
         marginTop: 10,
         fontSize: 12,
-        fontWeight: 400,
+        fontFamily: 'Poppins-Regular',
         color: colors.navyBlue,
     },
     cardDate: {
-        fontWeight: 400,
+        fontFamily: 'Poppins-Regular',
         fontSize: 10,
         color: colors.navyBlue,
         marginTop: 6,

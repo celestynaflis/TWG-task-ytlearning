@@ -15,15 +15,14 @@ export const videoCategoryStyles = StyleSheet.create({
         alignItems: 'center',
     },
     link: {
-        fontFamily: 'Poppins',
         fontSize: 12,
-        fontWeight: 400,
+        fontFamily: 'Poppins-Regular',
         textDecorationLine: 'underline',
         color: colors.navyBlue,
     },
     title: {
         fontSize: 18,
-        fontWeight: 600,
+        fontFamily: 'Poppins-SemiBold',
         color: colors.navyBlue,
     },
     separator: {

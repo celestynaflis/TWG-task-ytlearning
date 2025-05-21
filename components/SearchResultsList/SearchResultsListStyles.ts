@@ -7,19 +7,19 @@ export const searchResultsListStyles = StyleSheet.create({
     },
     resultsCounterText: {
         fontSize: 10,
-        fontWeight: 400,
+        fontFamily: 'Poppins-Regular',
         color: colors.navyBlue,
     },
     queryText: {
-        fontWeight: 600,
+        fontFamily: 'Poppins-SemiBold',
     },
     sortText: {
         fontSize: 12,
-        fontWeight: 400,
+        fontFamily: 'Poppins-Regular',
         color: colors.navyBlue,
         textAlign: 'right',
     },
     sortTextButton: {
-        fontWeight: 600,
+        fontFamily: 'Poppins-SemiBold',
     },
 });

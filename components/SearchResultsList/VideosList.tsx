@@ -1,21 +1,30 @@
-import { FlatList, Image, View } from 'react-native';
+import { FlatList, Image, TouchableOpacity, View } from 'react-native';
 import { videosListStyles } from './VideosListStyles';
 import { Text } from '@/components/Themed';
 import React from 'react';
 import { Video } from '@/api/types';
 import { displayDate } from '@/utils/displayDate';
+import { useRouter } from 'expo-router';
 
 interface VideosListProps {
     data: Video[];
+    listHeader: React.ReactElement;
 }
 
-export const VideosList: React.FC<VideosListProps> = ({ data }) => {
+export const VideosList: React.FC<VideosListProps> = ({ data, listHeader }) => {
+    const { push } = useRouter();
     return (
         <FlatList
             data={data}
             keyExtractor={(item) => item.id.videoId}
+            ListHeaderComponent={listHeader}
             renderItem={({ item }) => (
-                <View style={videosListStyles.container}>
+                <TouchableOpacity
+                    onPress={() => {
+                        push('/video-details');
+                    }}
+                    style={videosListStyles.container}
+                >
                     <Image
                         source={require('@/assets/images/react-native-video.png')}
                         style={videosListStyles.image}
@@ -33,7 +42,7 @@ export const VideosList: React.FC<VideosListProps> = ({ data }) => {
                     <Text style={videosListStyles.cardDate}>
                         {displayDate(item.snippet.publishedAt)}
                     </Text>
-                </View>
+                </TouchableOpacity>
             )}
         />
     );

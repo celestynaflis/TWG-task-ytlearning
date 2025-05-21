@@ -10,7 +10,7 @@ export const welcomePageStyles = StyleSheet.create({
         justifyContent: 'space-evenly',
     },
     slogan: {
-        fontWeight: 600,
+        fontFamily: 'Poppins-SemiBold',
         fontSize: 22,
         lineHeight: 24,
         color: colors.white,

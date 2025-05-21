@@ -1,4 +1,4 @@
-import { SafeAreaView, View } from 'react-native';
+import { SafeAreaView, ScrollView, View } from 'react-native';
 import { searchScreenStyles } from './SearchScreenStyles';
 import { SearchInput } from '@/components/SearchInput/SearchInput';
 import { searchVideos } from '@/api/youtubeApi';
@@ -12,7 +12,6 @@ export const SearchScreen = () => {
     const [videos, setVideos] = useState<Video[]>([]);
     const { searchQuery } = useSearchQuery();
 
-    console.log(searchQuery);
     useEffect(() => {
         const fetchVideos = async () => {
             // const results = await searchVideos(searchQuery);
@@ -21,8 +20,6 @@ export const SearchScreen = () => {
         };
         fetchVideos();
     }, [searchQuery]);
-
-    console.log(videos);
 
     return (
         <SafeAreaView style={searchScreenStyles.container}>
