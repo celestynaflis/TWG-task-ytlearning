@@ -113,7 +113,7 @@ export const VideoPlayerWithControls = () => {
                     </TouchableOpacity>
                 </>
             )}
-
+            {/*TODO - duration times and video progress bar*/}
             <Video
                 source={background}
                 ref={videoRef}
