@@ -1,9 +1,8 @@
 import { Video } from '@/api/types';
 import { VideosList } from './VideosList';
 import { useSearchQuery } from '@/context/SearchQueryContext';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { searchResultsListStyles } from './SearchResultsListStyles';
-import { Text } from '@/components/Themed';
 import React, { useState } from 'react';
 import { SortingOptionModal } from '@/components/SearchResultsList/SortingOptionModal/SortingOptionModal';
 import { sortListByPublishedDate } from '@/utils/sortListByPublishedDate';

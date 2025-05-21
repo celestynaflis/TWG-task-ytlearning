@@ -1,6 +1,5 @@
-import { Modal, Pressable, TouchableOpacity, View } from 'react-native';
+import { Modal, Pressable, TouchableOpacity, View, Text } from 'react-native';
 import React, { SetStateAction, useState } from 'react';
-import { Text } from '@/components/Themed';
 import { SortingOption } from '@/components/SearchResultsList/SearchResultsList';
 import { styles } from './SortingOptionModalStyles';
 

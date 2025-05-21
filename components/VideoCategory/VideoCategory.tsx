@@ -1,8 +1,7 @@
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { HorizontalVideoList } from '@/components/VideoCategory/HorizontalVideoList';
 import { Video } from '@/api/types';
 import React, { useEffect, useState } from 'react';
-import { Text } from '@/components/Themed';
 import { useRouter } from 'expo-router';
 import { useSearchQuery } from '@/context/SearchQueryContext';
 import { videoCategoryStyles } from './VideoCategoryStyles';

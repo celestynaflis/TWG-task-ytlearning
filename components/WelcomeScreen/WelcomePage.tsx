@@ -1,7 +1,6 @@
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { Link, useRouter } from 'expo-router';
 import { welcomePageStyles } from '@/components/WelcomeScreen/WelcomePageStyles';
-import { Text } from '@/components/Themed';
 import Logo from '@/assets/images/logo.svg';
 import AppIcon from '@/assets/icons/app-icon.svg';
 import { ActionButton } from '@/components/ActionButton/ActionButton';

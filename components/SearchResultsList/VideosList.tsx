@@ -1,6 +1,5 @@
-import { FlatList, Image, TouchableOpacity, View } from 'react-native';
+import { FlatList, Image, TouchableOpacity, Text } from 'react-native';
 import { videosListStyles } from './VideosListStyles';
-import { Text } from '@/components/Themed';
 import React from 'react';
 import { Video } from '@/api/types';
 import { displayDate } from '@/utils/displayDate';

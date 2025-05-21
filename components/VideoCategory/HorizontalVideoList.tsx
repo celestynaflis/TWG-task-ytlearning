@@ -1,5 +1,4 @@
-import { FlatList, View, Image, TouchableOpacity } from 'react-native';
-import { Text } from '@/components/Themed';
+import { FlatList, View, Image, Text, TouchableOpacity } from 'react-native';
 import { Video } from '@/api/types';
 import { horizontalVideoListStyles } from './HorizontalVideoListStyles';
 import React from 'react';
