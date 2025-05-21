@@ -39,15 +39,15 @@ This is a React Native app built with Expo, allowing users to search for YouTube
    ```ts
    export const API_KEY = 'your_key_here';
 
-3. **Install dependencies**
+3. **Install dependencies**  
    In the project root, run:
    ```npm install```
 
-5. **Run the app**
+5. **Run the app**  
    To launch the app on Android Emulator:
    ```npx expo run:android```
 
-7. **Enjoy :)**
+7. **Enjoy :)**  
 
 PS: You can also test the app using ```npx expo start``` with Expo Go, but the Video Detail Screen won’t work correctly, as Expo Go doesn’t support native modules like the ```react-native-video``` player.
 
