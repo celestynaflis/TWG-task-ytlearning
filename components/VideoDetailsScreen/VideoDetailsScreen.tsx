@@ -1,4 +1,4 @@
-import { VideoPlayer } from '@/components/VideoDetailsScreen/VideoPlayer/VideoPlayer';
+import { VideoPlayerWithControls } from '@/components/VideoDetailsScreen/VideoPlayer/VideoPlayerWithControls';
 import { SafeAreaView, ScrollView, View, Text } from 'react-native';
 import colors from '@/constants/Colors';
 import UserIcon from '@/assets/icons/person-icon.svg';
@@ -23,7 +23,7 @@ export const VideoDetailsScreen = () => {
 
     return (
         <>
-            <VideoPlayer />
+            <VideoPlayerWithControls />
             <SafeAreaView style={videoDetailsStyles.container}>
                 <ScrollView style={videoDetailsStyles.scrollContainer}>
                     <Text style={videoDetailsStyles.videoTitle}>

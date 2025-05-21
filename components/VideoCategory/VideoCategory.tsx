@@ -23,7 +23,6 @@ export const VideoCategory: React.FC<VideoCategoryProps> = ({ category }) => {
     useEffect(() => {
         const fetchVideos = async () => {
             const results = await searchVideos(category);
-            console.log('video category set');
             setVideos(results);
         };
 
